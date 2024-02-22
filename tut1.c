@@ -3,13 +3,13 @@
 
 
 //square of a no
-/*#include <stdio.h>
+#include <stdio.h>
 int main (){
     int num ;
     printf("Enter a integer:"); scanf("%d",&num);
     printf("Square of %d is %d.",num ,(num*num));
     return 0;
-}*/
+}
 
 //avg of 3 nos
 /*#include <stdio.h>
