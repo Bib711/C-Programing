@@ -2,7 +2,7 @@
 
 
 //add two complex nos
-/*#include <stdio.h>
+#include <stdio.h>
 int main (){
     float r1,i1,r2,i2;
     printf("Enter the real and imaginary part of first comlex no:(a b):");scanf("%f%f",&r1,&i1);
@@ -10,7 +10,7 @@ int main (){
     float real = r1+r2; float imag = i1+i2;
     printf("\n%.1f + i%.1f  \n%.1f + i%.1f  +\n--------------\n= %.1f + i%.1f\n ",r1,i1,r2,i2,real,imag);
     return 0;
-}*/
+}
 
 
 //to find simple interest

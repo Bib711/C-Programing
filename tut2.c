@@ -2,7 +2,7 @@
 
 
 //swap using a temp var
-/*#include <stdio.h>
+#include <stdio.h>
 int main(){
     int a,b,c;
     printf("Enter two nos(a b):"); scanf("%d%d",&a,&b);
@@ -10,7 +10,7 @@ int main(){
     c=a; a=b;b=c;
     printf("\nAfter Swapping a=%d and b=%d",a,b);
     return 0;
-}*/
+}
 
 //swap without using a temp
 /*#include <stdio.h>
