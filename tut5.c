@@ -64,7 +64,7 @@ int main() {
  #include <stdio.h>
 int main (){
     int num;
-    printf("Enter an number: "); scanf("%d", &num);
+    printf("Enter the number: "); scanf("%d", &num);
     if (num<100){
         if(num%2==0)
             printf("%d is a even no.",num);
