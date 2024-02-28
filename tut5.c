@@ -27,7 +27,7 @@ int main (){
 }*/
 
  //Q3 to check wheather entered no is +ve -ve or 0
-#include <stdio.h>
+/*#include <stdio.h>
 int main (){
     int num;
     printf("Enter the number: "); scanf("%d", &num);
@@ -38,4 +38,24 @@ int main (){
     else
         printf("\n%d is zero.",num);  
     return 0;    
+}*/
+
+//Q4 printing mark percentage  remarks of  a student for 3 subjects 
+#include <stdio.h>
+int main() {
+    int rollNo; char Name[15]; 
+    float m1,m2,m3;
+    printf("Enter student details--->\n");
+    printf("Enter the RollNo:",rollNo); scanf("%d",&rollNo);
+    printf("Enter your name:"); scanf(" %s",Name);
+    printf("Enter Marks in three Subjects: ");scanf("%f %f %f", &m1, &m2, &m3);
+    float totalPer =(m1+m2+m3)/3;
+    printf("\nStudent Details:\nRollNo:%d\nName:%s\nTotal percentage:%.2f\n",rollNo,Name,totalPer);
+    if (totalPer >= 75)
+        printf("\nRemarks:First Class with Distibction.");
+    else if(totalPer>=60 && totalPer<75)
+        printf("\nRemarks:First Class.");
+    else
+        printf("\nRemarks:Second Class");
+    return 0;
 }
