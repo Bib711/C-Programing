@@ -41,7 +41,7 @@ int main (){
 }*/
 
 //Q4 printing mark percentage  remarks of  a student for 3 subjects 
-#include <stdio.h>
+/*#include <stdio.h>
 int main() {
     int rollNo; char Name[15]; 
     float m1,m2,m3;
@@ -58,4 +58,20 @@ int main() {
     else
         printf("\nRemarks:Second Class");
     return 0;
+}*/
+
+//Q5check wheather the entered no below 100 is odd or even
+ #include <stdio.h>
+int main (){
+    int num;
+    printf("Enter an number: "); scanf("%d", &num);
+    if (num<100){
+        if(num%2==0)
+            printf("%d is a even no.",num);
+        else
+            printf("%d is a odd no.",num);
+    }
+    else{
+        printf("it is a positive number greater than 100");
+    }
 }
