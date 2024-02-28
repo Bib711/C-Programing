@@ -1,4 +1,4 @@
-//Tutorial ---> 5
+//Tutorial ---> 
 
 // Q1 eligible to vote or not?
 /*#include <stdio.h>
@@ -71,7 +71,7 @@ int main (){
         else
             printf("%d is a odd no.",num);
     }
-    else{
+    else
         printf("it is a positive number greater than 100");
-    }
+    return 0;
 }
