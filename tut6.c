@@ -1,4 +1,4 @@
-//Tutorial ---> 5
+//Tutorial ---> 6
 
 //Q1 to check wheather the entered char is a vowel or not
 /*#include <stdio.h>
