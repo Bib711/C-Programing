@@ -30,4 +30,30 @@ int main(){
     return 0;
 }*/
 
-//Q3 
+//Q3 convert temp between c & F
+#include <stdio.h>
+
+int main() {
+    int choice;float fahrenheit,celsius;
+    printf("\n1---> convert Celsuis to Fahrenheit\n2---> convert Fahrenheit to Celsius\nEnter a choice: ");
+    scanf("%d", &choice);
+    switch (choice)
+    {
+    case 1:           
+            printf("Enter temperature in Celsius: ");scanf("%f", &celsius);
+            fahrenheit = (celsius * 9 / 5) + 32;
+            printf("%.2f Celsius = %.2f Fahrenheit\n", celsius, fahrenheit);
+        break;
+    case 2:       
+            printf("Enter temperature in Fahrenheit: ");scanf("%f", &fahrenheit);
+            celsius = (fahrenheit - 32) * 5 / 9;
+            printf("%.2f Fahrenheit = %.2f Celsius\n", fahrenheit, celsius);
+        break;
+    
+    default:
+        printf("Wrong Input");
+        break;
+    }
+
+    return 0;
+}
