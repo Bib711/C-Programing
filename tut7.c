@@ -52,7 +52,7 @@ int main(){
 
 
 //Q5 Multiplication table
-#include <stdio.h>
+/*#include <stdio.h>
 int main(){
     int i=1,num;
     printf("\nEnter no:");scanf("%d",&num);
@@ -60,5 +60,20 @@ int main(){
         printf("%d * %d = %d\n",num,i,(num*i));
         ++i;      
     }
+    return 0;
+}*/
+
+//Q6 Reverse the no
+#include <stdio.h>
+int main(){
+    int num,reverse=0;
+    printf("Enter a no:");scanf("%d",&num);
+    printf("\nNo before reversing= %d",num);
+    while (num>0){       
+        int i = num%10;
+        reverse = reverse*10 + i;
+        num /=10;      
+    }
+    printf("\nNo after reversing= %d",reverse);
     return 0;
 }
