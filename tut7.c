@@ -12,7 +12,7 @@ int main(){
 }*/
 
 //Q2 Sum of Natural nos
-#include <stdio.h>
+/*#include <stdio.h>
 int main(){
     int num ,i=1,sum=0;
     printf("Enter the end no:");scanf("%d",&num);
@@ -20,6 +20,20 @@ int main(){
         sum += i;
         ++i;
     }
-    printf("Sum is %d.",sum);
+    printf("Sum of first %d natural nos is %d.",num,sum);
+    return 0;
+}*/
+
+
+//Q2 Sum of Natural nos
+#include <stdio.h>
+int main(){
+    int num,i=1,factorial=1;
+    printf("Enter a no:");scanf("%d",&num);
+    while (i<=num){       
+        factorial *= i;
+        ++i;      
+    }
+    printf("%d! = %d.",num,factorial);
     return 0;
 }
