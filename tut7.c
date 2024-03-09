@@ -39,12 +39,25 @@ int main(){
 }*/
 
 //Q4 Even Nos in a range
-#include <stdio.h>
+/*#include <stdio.h>
 int main(){
     int i=1,j=20;
     printf("\nEven nos in range of 1-20 are:\n");
     while (i<j){       
         if (i%2==0)printf("%d ",i);
+        ++i;      
+    }
+    return 0;
+}*/
+
+
+//Q5 Multiplication table
+#include <stdio.h>
+int main(){
+    int i=1,num;
+    printf("\nEnter no:");scanf("%d",&num);
+    while (i<=10){       
+        printf("%d * %d = %d\n",num,i,(num*i));
         ++i;      
     }
     return 0;
