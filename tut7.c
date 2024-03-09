@@ -1,6 +1,6 @@
 //Tutorial ---> 7
 
-//Q1 to print nos from 10-1
+//Q1 Countdown
 /*#include <stdio.h>
 int main(){
     int num = 10;
@@ -11,3 +11,15 @@ int main(){
     return 0;
 }*/
 
+//Q2 Sum of Natural nos
+#include <stdio.h>
+int main(){
+    int num ,i=1,sum=0;
+    printf("Enter the end no:");scanf("%d",&num);
+    while (i<=num){
+        sum += i;
+        ++i;
+    }
+    printf("Sum is %d.",sum);
+    return 0;
+}
