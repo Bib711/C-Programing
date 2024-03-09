@@ -25,8 +25,8 @@ int main(){
 }*/
 
 
-//Q2 Sum of Natural nos
-#include <stdio.h>
+//Q3 Factorial
+/*#include <stdio.h>
 int main(){
     int num,i=1,factorial=1;
     printf("Enter a no:");scanf("%d",&num);
@@ -35,5 +35,17 @@ int main(){
         ++i;      
     }
     printf("%d! = %d.",num,factorial);
+    return 0;
+}*/
+
+//Q4 Even Nos in a range
+#include <stdio.h>
+int main(){
+    int i=1,j=20;
+    printf("\nEven nos in range of 1-20 are:\n");
+    while (i<j){       
+        if (i%2==0)printf("%d ",i);
+        ++i;      
+    }
     return 0;
 }
