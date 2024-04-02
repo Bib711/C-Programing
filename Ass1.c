@@ -1,6 +1,15 @@
 //C Programming assignment
 
 //Q1 to print the series 100,95,90...,5
+/*Pseudo code 
+1. Start
+2. Set a variable 'num’ to 100
+3. While 'num' is greater than or equal to 5:
+     a Print the value of 'num'
+     b also decrease the value of num by 5, num-=5
+4. End*/
+
+//Program
 /*#include <stdio.h>
 int main() {
     for(int i =100; i>0;i-=5){
@@ -8,6 +17,7 @@ int main() {
     }
     return 0;
 }*/
+
 
 //Q2 a)to print the upper triangle pattern using star
 /*#include <stdio.h>
