@@ -18,7 +18,7 @@ int main() {
 }*/
 
 //to count the total number of alphabets, digits and special characters in a string.
-#include <stdio.h>
+/*#include <stdio.h>
  
  int main(){
     char str[100];
@@ -38,6 +38,25 @@ int main() {
     printf("Total number of alphabets: %d\n", totalAlphabets);
     printf("Total number of digits: %d\n", totalDigits);
     printf("Total number of special characters: %d\n", totalSpecialChars);
+
+    return 0;
+}*/
+
+//to find the maximum number of characters in a string
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int max_chars = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Find the maximum number of characters
+    max_chars = strlen(str);
+    //here -1 is to exclude \n
+    printf("The maximum number of characters in the string is: %d\n", max_chars-1);
 
     return 0;
 }
