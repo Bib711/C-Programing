@@ -40,7 +40,7 @@ int main(){
 }*/
 
 //Q3 to reverse a null terminating string
-#include <stdio.h>
+/*#include <stdio.h>
 void rev(char arr[],char res[],int start,int size){
     if (size<0){
         res[start]='\0'; }
@@ -67,5 +67,47 @@ int main(){
         printf("%c ",res[i]);
         i++;
     }
+    return 0;
+}*/
+
+//Q4 to convert a decimal no to binary using recursion
+/*#include <stdio.h>
+void decToBinary(int n) {
+    //printf("%d\n",n);
+    if (n / 2 != 0) {
+        decToBinary(n / 2);
+    }
+    printf("%d\n",n);
+    //printf("%d", n % 2);
+}
+
+
+int main() {
+    int num = 10;
+    printf("The binary representation of %d is: ", num);
+    decToBinary(num);
+    return 0;
+}*/
+
+//Q5 to check wheather the string is palindrrome or not using recursive fcn
+#include <stdio.h>
+int pali(char arr[],int start,int size){
+    if(start<size){
+        if( arr[start] != arr[size]){
+            return 0; 
+        }
+        pali(arr,++start,--size);
+    }else{
+        return 1;
+    }
+      
+     
+}
+
+int main(){
+    char arr[5] = {'1','2','3','7','1'};
+    int size = (sizeof(arr)/sizeof(arr[0]))-1,start=0;
+    int res = pali(arr,start,size);
+    (res==1)? printf("Is palindrome") : printf("Is not palindrome.");
     return 0;
 }
