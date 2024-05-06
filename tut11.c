@@ -12,7 +12,7 @@ int srch(int arr[],int start,int size,int ele){
 
 int main(){
     int arr[5] = {1,2,3,4,5};
-    int size = 5,ele =2,start=0;
+    int size = 5,ele =8,start=0;
     int index = srch(arr,start,size,ele);
     (index>=0)? printf("%d is found in position %d.",ele,index+1) : printf("Not found.");
     return 0;
@@ -32,15 +32,23 @@ int dsum(int num){
 }
 
 int main(){
-    int digit = cdig(213);
-    int sum = dsum(231);
-    printf("No of digits is %d",digit);
-    printf("\nSum is %d",sum);
+    int num;
+    printf("Enter a positive integer:");scanf("%d",&num);
+    if(num>0){
+        int digit = cdig(num);
+        int sum = dsum(num);
+        printf("No of digits is %d",digit);
+        printf("\nSum is %d",sum);
+    }else{
+        printf("Entered no is a -ve number.");
+    }
+    
     return 0;
 }*/
 
 //Q3 to reverse a null terminating string
 /*#include <stdio.h>
+#include <string.h>
 void rev(char arr[],char res[],int start,int size){
     if (size<0){
         res[start]='\0'; }
@@ -51,20 +59,20 @@ void rev(char arr[],char res[],int start,int size){
 }
 
 int main(){
-    char arr[5] = {'1','2','3','4','5'};
-    char res[5];
-    int size = (sizeof(arr)/sizeof(arr[0]))-1,start=0;
+    char arr[50],res[50];
+    printf("Enter the string:");fgets(arr,sizeof(arr),stdin);
+    int size = strlen(arr)-2,start=0;
     printf("Before reversing:");
     int i =0;
     while (i<=size){
-        printf("%c ",arr[i]);
+        printf("%c",arr[i]);
         i++;
     }
     rev(arr,res,start,size);
     printf("\nAfter reversing:");
     i =0;
     while (i<=size){
-        printf("%c ",res[i]);
+        printf("%c",res[i]);
         i++;
     }
     return 0;
@@ -73,24 +81,25 @@ int main(){
 //Q4 to convert a decimal no to binary using recursion
 /*#include <stdio.h>
 void decToBinary(int n) {
-    //printf("%d\n",n);
+    //printf("%d\n",n); test stmt
     if (n / 2 != 0) {
         decToBinary(n / 2);
     }
-    printf("%d\n",n);
-    //printf("%d", n % 2);
+    //printf("%d\n",n); test stmt
+    printf("%d", n % 2);
 }
 
 
 int main() {
-    int num = 10;
+    int num;
+    printf("Enter a no:");scanf("%d",&num);
     printf("The binary representation of %d is: ", num);
     decToBinary(num);
     return 0;
 }*/
 
 //Q5 to check wheather the string is palindrrome or not using recursive fcn
-#include <stdio.h>
+#include <stdio.h>,
 #include <string.h>
 int pali(char arr[],int start,int size){
     if(start<size){
