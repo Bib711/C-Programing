@@ -91,6 +91,7 @@ int main() {
 
 //Q5 to check wheather the string is palindrrome or not using recursive fcn
 #include <stdio.h>
+#include <string.h>
 int pali(char arr[],int start,int size){
     if(start<size){
         if( arr[start] != arr[size]){
@@ -99,14 +100,13 @@ int pali(char arr[],int start,int size){
         pali(arr,++start,--size);
     }else{
         return 1;
-    }
-      
-     
+    }   
 }
 
 int main(){
-    char arr[5] = {'1','2','3','7','1'};
-    int size = (sizeof(arr)/sizeof(arr[0]))-1,start=0;
+    char arr[100];
+    printf("Enter the string:");fgets(arr,sizeof(arr),stdin);
+    int size = strlen(arr)-2,start=0;
     int res = pali(arr,start,size);
     (res==1)? printf("Is palindrome") : printf("Is not palindrome.");
     return 0;
