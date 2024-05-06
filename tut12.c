@@ -1,4 +1,4 @@
-//Tutorial ----> 11
+//Tutorial ----> 12
 
 //Q1 to find the factorial of a given number using pointers
 /*#include <stdio.h>
