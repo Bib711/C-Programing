@@ -20,6 +20,13 @@ int loadData(FitnessData *data, const char *date);
 
 int main() {
     int choice;
+    printf("\n");
+    printf("--------------------------------------------------------\n");
+    printf("|                                                      |\n");
+    printf("|            Welcome to Your Fitness Tracker App       |\n");
+    printf("|                                                      |\n");
+    printf("--------------------------------------------------------\n");
+    printf("\n");
 
     do {
         displayMenu();
