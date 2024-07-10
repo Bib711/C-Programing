@@ -154,8 +154,8 @@ int loadData(FitnessData *data, const char *date) {
         return 0;
     }
 
-    while (fscanf(file, "%d %d %f %s", &data->steps, &data->calories, &data->progress, data->date) != EOF) {
-        if (strcmp(data->date, date) == 0) {
+    while (fscanf(file, "%d %d %f %s", &((*data).steps), &((*data).calories), &((*data).progress), (*data).date) != EOF) {
+        if (strcmp((*data).date, date) == 0) {
             fclose(file);
             return 1;
         }
@@ -164,3 +164,4 @@ int loadData(FitnessData *data, const char *date) {
     fclose(file);
     return 0;
 }
+
