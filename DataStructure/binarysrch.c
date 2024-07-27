@@ -60,6 +60,6 @@ int main(){
     (flag>0) ? printf("%d found at position %d.", target, mid+1) : printf("Target not found.");
     tc+=3;
     printf("\nTime complexity is %d", tc+3);
-    printf("\nSpace Complexity is %d", (67+(8*size)));
+    printf("\nSpace Complexity is %d", (64+(8*size)));
     return 0;
 }
