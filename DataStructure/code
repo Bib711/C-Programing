@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+char stack[100];
+int top = -1;
+
+// Push function
+void push(char x) {
+    if (top >= 100 - 1) {
+        printf("\nStack overflow");
+    } else {
+        stack[++top] = x;
+    }
+}
+
+// Pop function
+char pop() {
+    if (top == -1) {
+        printf("\nStack underflow");
+        exit(0);
+    } else {
+        return stack[top--];
+    }
+}
+
+// Priority of operators
+int priority(char x) {
+    if (x == '(')
+        return 0;
+    if (x == '+' || x == '-')
+        return 1;
+    if (x == '/' || x == '*')
+        return 2;
+    if (x == '^')
+        return 3;
+    return 0;
+}
+
+void infixToPostfix(char exp[]) {
+    int i = 0; // Index for iterating over the input expression
+    char x;
+
+    while (exp[i] != '\0') {
+        if (isalnum(exp[i])) {
+            // If the character is an operand, print it
+            printf("%c ", exp[i]);
+        } else if (exp[i] == '(') {
+            // If it's an opening parenthesis, push it onto the stack
+            push(exp[i]);
+        } else if (exp[i] == ')') {
+            // If it's a closing parenthesis, pop until '(' is encountered
+            while ((x = pop()) != '(') {
+                printf("%c ", x);
+            }
+        } else {
+            // If it's an operator, pop operators from the stack with higher or equal precedence
+            while (top != -1 && priority(stack[top]) >= priority(exp[i])) {
+                printf("%c ", pop());
+            }
+            push(exp[i]); // Push the current operator onto the stack
+        }
+        i++; // Move to the next character
+    }
+
+    // Pop all remaining operators from the stack
+    while (top != -1) {
+        printf("%c ", pop());
+    }
+}
+
+int main() {
+    char exp[100];
+    printf("Enter the expression: ");
+    scanf("%s", exp); // Input the infix expression
+
+    printf("Postfix expression: ");
+    infixToPostfix(exp); // Convert infix to postfix
+
+    return 0;
+}
