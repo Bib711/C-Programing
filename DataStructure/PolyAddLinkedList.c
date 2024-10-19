@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 struct Node {
     int coeff;
     int exp;
     struct Node* next;
 };
-
 
 struct Node* createNode(int coeff, int exp) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
@@ -17,23 +15,35 @@ struct Node* createNode(int coeff, int exp) {
     return newNode;
 }
 
-
 struct Node* insertInOrder(struct Node* head, int coeff, int exp) {
     struct Node* newNode = createNode(coeff, exp);
+    
     if (head == NULL || exp < head->exp) {
         newNode->next = head;
         return newNode;
     }
 
     struct Node* current = head;
-    while (current->next != NULL && current->next->exp < exp) {
+    struct Node* previous = NULL;
+    
+    while (current != NULL && current->exp < exp) {
+        previous = current;
         current = current->next;
     }
-    newNode->next = current->next;
-    current->next = newNode;
+    
+    if (current != NULL && current->exp == exp) {
+        current->coeff += coeff;
+        free(newNode);
+        return head;
+    }
+
+    newNode->next = current;
+    if (previous != NULL) {
+        previous->next = newNode;
+    }
+    
     return head;
 }
-
 
 void printPoly(struct Node* poly) {
     while (poly != NULL) {
@@ -46,15 +56,13 @@ void printPoly(struct Node* poly) {
     printf("\n");
 }
 
-
 struct Node* addPolynomials(struct Node* poly1, struct Node* poly2) {
-    struct Node* result = NULL; 
+    struct Node* result = NULL;
 
     while (poly1 != NULL || poly2 != NULL) {
         int coeff = 0;
         int exp = 0;
 
-        
         if (poly1 != NULL && (poly2 == NULL || poly1->exp > poly2->exp)) {
             coeff = poly1->coeff;
             exp = poly1->exp;
@@ -70,7 +78,6 @@ struct Node* addPolynomials(struct Node* poly1, struct Node* poly2) {
             poly2 = poly2->next;
         }
 
-        
         result = insertInOrder(result, coeff, exp);
     }
 
@@ -82,7 +89,6 @@ int main() {
     struct Node* poly2 = NULL;
     int n1, n2, coeff, exp;
 
-    
     printf("Enter the number of terms in the first polynomial: ");
     scanf("%d", &n1);
     for (int i = 0; i < n1; i++) {
@@ -91,7 +97,6 @@ int main() {
         poly1 = insertInOrder(poly1, coeff, exp);
     }
 
-   
     printf("Enter the number of terms in the second polynomial: ");
     scanf("%d", &n2);
     for (int i = 0; i < n2; i++) {
@@ -100,20 +105,17 @@ int main() {
         poly2 = insertInOrder(poly2, coeff, exp); 
     }
 
-   
     printf("First polynomial: ");
     printPoly(poly1);
 
-    
     printf("Second polynomial: ");
     printPoly(poly2);
 
-    
     struct Node* result = addPolynomials(poly1, poly2);
 
-    
     printf("Resultant polynomial: ");
     printPoly(result);
 
     return 0;
 }
+
