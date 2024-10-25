@@ -57,8 +57,14 @@ void printArray(int arr[], int size) {
 }
 
 int main() {
-    int arr[] = {38, 27, 43, 3, 9, 82, 10};
-    int arr_size = sizeof(arr) / sizeof(arr[0]);
+    int arr[100];
+    int arr_size;
+    printf("Enter no of elements:");
+    scanf("%d",&arr_size);
+    printf("Enter elements:");
+    for(int i=0;i<arr_size;i++){
+    	scanf("%d",&arr[i]);
+    }
 
     printf("Given array is: \n");
     printArray(arr, arr_size);
